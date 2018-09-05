@@ -1,4 +1,4 @@
-console.log("connected");
+var a = setInterval(function() {
 
 var array = [];
 
@@ -22,7 +22,7 @@ while(choice !== "quit")
 		deleteTodo();
 	}
 
-	choice = prompt("Which option");
+	choice = prompt("Which option you would like to choose?");
 
 }
 
@@ -34,6 +34,7 @@ function listTodos()
 		array.forEach(function(array, index){
 		
 			console.log(index + ": " + array);
+			alert(index + ": " + array);
 			
 		});
 		console.log("*********");
@@ -42,15 +43,21 @@ function listTodos()
 
 function deleteTodo()
 {
-	var deleteElem = prompt("Which todo index to remove")
+	var deleteElem = prompt("Which todo index to remove from the list")
 	array.splice(deleteElem, 1);
 	console.log(array);
+	alert(array);
 }
 
 function addTodo()
 {
-	var list = prompt("What is the todo");
+	var list = prompt("What is the todo you'd like to add to the list");
 	array.push(list);
 	console.log(array);
+	alert(array);
 
 }
+
+// clearInterval(this.a); // can also try this
+ clearInterval(a);
+},500);
